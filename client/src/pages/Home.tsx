@@ -457,53 +457,79 @@ export default function Home() {
       </section>
 
       {/* ── Account types ── */}
-      <section id="comptes" className="py-20 bg-white">
-        <div className="container">
+      <section id="comptes" className="py-20 bg-[#06140F] relative overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+        <div className="container relative">
           <div className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Choisissez votre type de compte
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-gray-400 max-w-2xl mx-auto">
               Un compte particulier pour gérer vos finances personnelles, un compte business pour vos activités professionnelles.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {accounts.map((a, i) => (
-              <div
-                key={i}
-                className={`rounded-2xl border-2 ${a.accent} p-8 flex flex-col`}
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`w-12 h-12 ${a.bg} rounded-xl flex items-center justify-center`}>
-                    {a.icon}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {accounts.map((a, i) => {
+              const isBusiness = i === 1
+              return (
+                <div
+                  key={i}
+                  className={`rounded-2xl p-8 flex flex-col border ${
+                    isBusiness
+                      ? 'bg-blue-500/[0.06] border-blue-400/30'
+                      : 'bg-primary-500/[0.06] border-primary-400/30'
+                  }`}
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div
+                      className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                        isBusiness ? 'bg-blue-500/15 text-blue-300' : 'bg-primary-500/15 text-primary-300'
+                      }`}
+                    >
+                      {a.icon}
+                    </div>
+                    <div>
+                      <span
+                        className={`text-xs font-medium px-2.5 py-1 rounded-full ${
+                          isBusiness ? 'bg-blue-500/15 text-blue-200' : 'bg-primary-500/15 text-emerald-200'
+                        }`}
+                      >
+                        {a.badgeLabel}
+                      </span>
+                    </div>
                   </div>
+                  <h3 className="text-lg font-medium text-white mt-4 mb-6">{a.type}</h3>
+
+                  <ul className="space-y-2.5 mb-8 flex-1">
+                    {a.perks.map((p, j) => (
+                      <li key={j} className="flex items-start gap-2.5 text-sm text-gray-300 leading-snug">
+                        <CheckCircle2
+                          size={15}
+                          className={`flex-shrink-0 mt-0.5 ${isBusiness ? 'text-blue-400' : 'text-primary-400'}`}
+                        />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+
                   <div>
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${a.badge}`}>{a.badgeLabel}</span>
+                    <button
+                      disabled
+                      className={`w-full font-medium py-2.5 px-6 rounded-xl flex items-center justify-center gap-2 text-sm cursor-not-allowed border ${
+                        isBusiness
+                          ? 'bg-blue-500/10 text-blue-200 border-blue-400/25'
+                          : 'bg-primary-500/10 text-emerald-200 border-primary-400/25'
+                      }`}
+                    >
+                      Bientôt disponible
+                    </button>
+                    <p className="text-xs text-center text-gray-500 mt-3">{a.note}</p>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mt-4 mb-6">{a.type}</h3>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {a.perks.map((p, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm text-foreground">
-                      <CheckCircle2 size={16} className="text-primary-500 flex-shrink-0" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-
-                <div>
-                  <button
-                    disabled
-                    className="w-full bg-gray-100 text-gray-400 font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 text-sm cursor-not-allowed border border-gray-200"
-                  >
-                    Bientôt disponible
-                  </button>
-                  <p className="text-xs text-center text-muted-foreground mt-3">{a.note}</p>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
