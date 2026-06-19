@@ -4,8 +4,9 @@ import {
   ArrowRight, Zap, Lock, Smartphone, ArrowLeftRight,
   Send, CheckCircle2, Star, ChevronDown, Eye, RefreshCw,
   Wallet, ArrowDownToLine, ArrowUpFromLine, Building2,
-  ShieldCheck, QrCode
+  ShieldCheck, QrCode, Wifi, CreditCard
 } from 'lucide-react'
+import { QRCodeSVG } from 'qrcode.react'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import FAQChatbot from '../components/FAQChatbot'
@@ -326,6 +327,66 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── QR Lite — Accès sans application ── */}
+      <section className="py-20 bg-[#06140F] relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
+        <div className="container relative">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-primary-500/10 text-emerald-300 text-xs font-medium px-3 py-1.5 rounded-full mb-5">
+                <Zap size={14} />
+                <span>Sans application</span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+                Scannez. <span className="text-primary-400">Aucune installation requise.</span>
+              </h2>
+              <p className="text-gray-400 mb-8 leading-relaxed max-w-xl">
+                Téléphone ancien, espace de stockage limité ou simplement pas envie d'installer une application&nbsp;?
+                Scannez le QR code et accédez instantanément à vos services MOBILE-PAY essentiels, directement
+                depuis le navigateur de votre téléphone.
+              </p>
+
+              <div className="grid grid-cols-2 gap-3 max-w-md mb-8">
+                {[
+                  { icon: <Smartphone size={16} />, label: 'Achat airtime' },
+                  { icon: <Wifi size={16} />, label: 'Achat data' },
+                  { icon: <CreditCard size={16} />, label: 'Recharge carte virtuelle' },
+                  { icon: <Send size={16} />, label: 'Transfert inter-opérateurs' },
+                ].map((s) => (
+                  <div
+                    key={s.label}
+                    className="flex items-center gap-2.5 bg-white/5 border border-primary-500/20 rounded-xl px-3.5 py-2.5 text-sm text-gray-200"
+                  >
+                    <span className="text-primary-400 flex-shrink-0">{s.icon}</span>
+                    {s.label}
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://www.mobilepay-ci.com/lite"
+                className="inline-flex items-center gap-2 text-primary-400 text-sm font-medium hover:text-primary-300 transition-colors"
+              >
+                Ou ouvrez directement www.mobilepay-ci.com/lite <ArrowRight size={14} />
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-5 flex flex-col items-center gap-3 self-center mx-auto lg:mx-0">
+              <QRCodeSVG
+                value="https://www.mobilepay-ci.com/lite"
+                size={148}
+                fgColor="#06140F"
+                level="M"
+              />
+              <p className="text-xs font-medium text-[#06140F] text-center">
+                Scanner pour démarrer
+                <span className="block text-[11px] font-normal text-gray-500 mt-0.5">Sans téléchargement</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
