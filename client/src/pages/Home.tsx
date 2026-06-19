@@ -175,7 +175,7 @@ export default function Home() {
                 <span className="text-primary-500">entre tous les opérateurs</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
-                Wave, Orange Money, MTN MoMo, Moov — MOBILE-PAY casse les silos et connecte tous les opérateurs de Côte d'Ivoire dans une seule app : transfert, dépôt, retrait, airtime et paiement QR.
+                Wave, Orange Money, MTN MoMo, Moov — MOBILE-PAY casse les silos et connecte tous les opérateurs en Afrique francophone dans une seule app : transfert, dépôt, retrait, airtime et paiement QR. Et partout ailleurs dans le monde, profitez de l'airtime, du data, de la carte Visa virtuelle, de PayPal et des cartes cadeaux.
               </p>
 
               {/* Download buttons */}
