@@ -297,7 +297,7 @@ export default function Home() {
               <span>7 services disponibles</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Tout ce que vous pouvez faire avec ORZAYAH
+              Tout ce que vous pouvez faire avec <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-8 w-auto align-middle ml-1" />
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Accédez à tous vos services financiers du quotidien depuis une application unique, quel que soit votre opérateur.
@@ -546,7 +546,7 @@ export default function Home() {
             <span>Application mobile bientôt disponible</span>
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold mb-6 max-w-2xl mx-auto leading-tight">
-            ORZAYAH arrive bientôt
+            <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-7 w-auto align-middle" /> arrive bientôt
           </h2>
           <p className="text-primary-100 text-lg mb-10 max-w-xl mx-auto">
             L'application sera bientôt disponible sur Android et iOS. Gérez toutes vos finances depuis votre smartphone — gratuit et sécurisé.
@@ -673,7 +673,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Conçu pour l'Afrique de l'Ouest</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                ORZAYAH est la première super-app financière qui répond aux besoins réels des particuliers et des entreprises de la zone UEMOA — des transferts ruraux aux paiements e-commerce internationaux.
+                <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-6 w-auto align-middle mr-1" /> est la première super-app financière qui répond aux besoins réels des particuliers et des entreprises de la zone UEMOA — des transferts ruraux aux paiements e-commerce internationaux.
               </p>
               <div className="space-y-4 mb-8">
                 {[
