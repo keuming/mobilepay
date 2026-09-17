@@ -100,9 +100,9 @@ export function About() {
       <Navigation />
       <section className="gradient-hero py-20">
         <div className="container max-w-3xl text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">À propos de ORZAYAH</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">À propos de <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /></h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            ORZAYAH est une solution fintech développée par la Compagnie des Services Numériques, basée en Côte d'Ivoire. 
+            <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> est une solution fintech développée par la Compagnie des Services Numériques, basée en Côte d'Ivoire. 
             Notre mission est de démocratiser l'accès aux services financiers pour tous les Africains.
           </p>
         </div>
@@ -117,7 +117,7 @@ export function About() {
                 Nous croyons en un avenir où chaque Africain, qu'il soit en ville ou en milieu rural, a accès à des services financiers dignes, sécurisés et abordables.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                ORZAYAH facilite les paiements, les transferts et la gestion financière pour les marchands, les agriculteurs, les employeurs et les particuliers.
+                <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> facilite les paiements, les transferts et la gestion financière pour les marchands, les agriculteurs, les employeurs et les particuliers.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -210,8 +210,8 @@ export function Pricing() {
 export function Blog() {
   const posts = [
     { title: 'L\'avenir du paiement mobile en Afrique de l\'Ouest', category: 'Fintech', date: '15 Jan 2026', excerpt: 'Découvrez comment le paiement mobile transforme les économies africaines...' },
-    { title: 'Comment protéger votre compte ORZAYAH', category: 'Sécurité', date: '8 Jan 2026', excerpt: 'Les meilleures pratiques pour sécuriser votre portefeuille numérique...' },
-    { title: 'ORZAYAH et l\'inclusion financière rurale', category: 'Impact', date: '2 Jan 2026', excerpt: 'Comment nous aidons les communautés rurales à accéder aux services bancaires...' },
+    { title: 'Comment protéger votre compte <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" />', category: 'Sécurité', date: '8 Jan 2026', excerpt: 'Les meilleures pratiques pour sécuriser votre portefeuille numérique...' },
+    { title: '<img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> et l\'inclusion financière rurale', category: 'Impact', date: '2 Jan 2026', excerpt: 'Comment nous aidons les communautés rurales à accéder aux services bancaires...' },
   ]
 
   return (
@@ -220,7 +220,7 @@ export function Blog() {
       <section className="gradient-hero py-16">
         <div className="container">
           <h1 className="text-4xl font-bold text-foreground mb-4">Blog & Actualités</h1>
-          <p className="text-lg text-muted-foreground">Restez informé des dernières nouvelles de ORZAYAH et de la fintech africaine.</p>
+          <p className="text-lg text-muted-foreground">Restez informé des dernières nouvelles de <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> et de la fintech africaine.</p>
         </div>
       </section>
       <section className="section-py bg-white">

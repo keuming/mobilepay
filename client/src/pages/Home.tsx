@@ -176,7 +176,7 @@ export default function Home() {
                 <span className="text-primary-500">entre tous les opérateurs</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
-                Wave, Orange Money, MTN MoMo, Moov — ORZAYAH casse les silos et connecte tous les opérateurs en Afrique francophone dans une seule app : transfert, dépôt, retrait, airtime et paiement QR. Et partout ailleurs dans le monde, profitez de l'airtime, du data, de la carte Visa virtuelle, de PayPal et des cartes cadeaux.
+                Wave, Orange Money, MTN MoMo, Moov — <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle mr-1" /> casse les silos et connecte tous les opérateurs en Afrique francophone dans une seule app : transfert, dépôt, retrait, airtime et paiement QR. Et partout ailleurs dans le monde, profitez de l'airtime, du data, de la carte Visa virtuelle, de PayPal et des cartes cadeaux.
               </p>
 
               {/* Download buttons */}
@@ -346,7 +346,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-400 mb-8 leading-relaxed max-w-xl">
                 Téléphone ancien, espace de stockage limité ou simplement pas envie d'installer une application&nbsp;?
-                Scannez le QR code et accédez instantanément à vos services ORZAYAH essentiels, directement
+                Scannez le QR code et accédez instantanément à vos services <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> essentiels, directement
                 depuis le navigateur de votre téléphone.
               </p>
 
@@ -368,7 +368,7 @@ export default function Home() {
               </div>
 
               <a
-                href="https://www.ORZAYAH-ci.com/lite"
+                href="https://www.orzayah.com/lite"
                 className="inline-flex items-center gap-2 text-primary-400 text-sm font-medium hover:text-primary-300 transition-colors"
               >
                 Ou ouvrez directement www.ORZAYAH-ci.com/lite <ArrowRight size={14} />
@@ -377,7 +377,7 @@ export default function Home() {
 
             <div className="bg-white rounded-2xl p-5 flex flex-col items-center gap-3 self-center mx-auto lg:mx-0">
               <QRCodeSVG
-                value="https://www.ORZAYAH-ci.com/lite"
+                value="https://www.orzayah.com/lite"
                 size={148}
                 fgColor="#06140F"
                 level="M"
@@ -631,7 +631,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Ce que disent nos utilisateurs</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Particuliers et entreprises font confiance à ORZAYAH pour leurs finances au quotidien.
+              Particuliers et entreprises font confiance à <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> pour leurs finances au quotidien.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -712,7 +712,7 @@ export default function Home() {
           <div className="mb-10">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Questions fréquentes</h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Tout ce que vous devez savoir sur ORZAYAH et ses services.
+              Tout ce que vous devez savoir sur <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> et ses services.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -749,7 +749,7 @@ export default function Home() {
                   className="w-full h-72 object-cover object-top"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                  <p className="text-white font-semibold text-sm">Des milliers de jeunes font confiance à ORZAYAH</p>
+                  <p className="text-white font-semibold text-sm">Des milliers de jeunes font confiance à <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /></p>
                   <p className="text-white/80 text-xs mt-1">Rejoignez la communauté</p>
                 </div>
               </div>
