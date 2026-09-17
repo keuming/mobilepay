@@ -210,8 +210,8 @@ export function Pricing() {
 export function Blog() {
   const posts = [
     { title: 'L\'avenir du paiement mobile en Afrique de l\'Ouest', category: 'Fintech', date: '15 Jan 2026', excerpt: 'Découvrez comment le paiement mobile transforme les économies africaines...' },
-    { title: 'Comment protéger votre compte <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" />', category: 'Sécurité', date: '8 Jan 2026', excerpt: 'Les meilleures pratiques pour sécuriser votre portefeuille numérique...' },
-    { title: '<img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> et l\'inclusion financière rurale', category: 'Impact', date: '2 Jan 2026', excerpt: 'Comment nous aidons les communautés rurales à accéder aux services bancaires...' },
+  { title: 'Comment protéger votre compte ORZAYAH', category: 'Sécurité', date: '8 Jan 2026', excerpt: 'Les meilleures pratiques pour sécuriser votre portefeuille numérique...' },
+  { title: 'ORZAYAH et l\'inclusion financière rurale', category: 'Impact', date: '2 Jan 2026', excerpt: 'Comment nous aidons les communautés rurales à accéder aux services bancaires...' },
   ]
 
   return (
