@@ -1,4 +1,4 @@
-﻿import { useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import { BarChart3, Users, MessageSquare, Store, FileText, ArrowRight, Shield } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'

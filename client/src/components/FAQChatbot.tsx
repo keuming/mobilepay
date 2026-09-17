@@ -1,4 +1,4 @@
-﻿import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send, Trash2, Loader2, Bot } from 'lucide-react'
 import api from '../lib/api'
 

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Store, QrCode, BarChart3, Shield, ArrowRight, CheckCircle2, Loader2 } from 'lucide-react'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'

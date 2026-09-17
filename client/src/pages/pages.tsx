@@ -1,4 +1,4 @@
-﻿// International.tsx
+// International.tsx
 import { Globe2, ArrowRight, CheckCircle2, Clock, DollarSign } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'

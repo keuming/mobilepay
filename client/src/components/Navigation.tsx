@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, LogOut, LayoutDashboard, Shield } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'

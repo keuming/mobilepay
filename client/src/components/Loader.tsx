@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 /**
  * Écran de chargement plein écran affiché au démarrage de l'app.
