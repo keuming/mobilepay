@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -9,15 +9,15 @@ export default function Footer() {
           <div className="md:col-span-2">
             {/* Marque : pastille (logo-mark) + nom en blanc (fond sombre) */}
             <div className="flex items-center gap-2.5 font-heading font-bold text-xl mb-4">
-              <img src="/logo-mark.png" alt="MobilePay" className="w-9 h-9" />
+              <img src="/logo-mark.png" alt="ORZAYAH" className="w-9 h-9" />
               <span>MOBILE-<span className="text-primary-400">PAY</span></span>
             </div>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed max-w-xs">
-              Votre portefeuille numérique tout-en-un pour une gestion financière simplifiée en Afrique de l'Ouest.
+              Votre Powering African Commerce pour une gestion financière simplifiée en Afrique de l'Ouest.
             </p>
             <div className="space-y-1.5 text-sm text-gray-400">
               <p><a href="tel:+2250504921096" className="hover:text-white transition-colors">+225 05 04 92 10 96</a></p>
-              <p><a href="mailto:info@mobilepay-ci.com" className="hover:text-white transition-colors">info@mobilepay-ci.com</a></p>
+              <p><a href="mailto:info@ORZAYAH-ci.com" className="hover:text-white transition-colors">info@ORZAYAH-ci.com</a></p>
             </div>
           </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
             <h4 className="font-semibold text-sm mb-4">Support</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
-              <li><a href="mailto:info@mobilepay-ci.com" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:info@ORZAYAH-ci.com" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>

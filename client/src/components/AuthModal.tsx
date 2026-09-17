@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { X, Eye, EyeOff, Loader2 } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 import toast from 'react-hot-toast'
@@ -48,7 +48,7 @@ export default function AuthModal({ onClose }: Props) {
               {mode === 'login' ? 'Connexion' : 'Créer un compte'}
             </h2>
             <p className="text-sm text-muted-foreground mt-0.5">
-              {mode === 'login' ? 'Bienvenue sur MOBILE-PAY' : 'Rejoignez MOBILE-PAY gratuitement'}
+              {mode === 'login' ? 'Bienvenue sur ORZAYAH' : 'Rejoignez ORZAYAH gratuitement'}
             </p>
           </div>
           <button onClick={onClose} className="p-2 rounded-lg hover:bg-gray-100 text-muted-foreground">

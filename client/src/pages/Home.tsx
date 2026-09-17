@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Zap, Lock, Smartphone, ArrowLeftRight,
@@ -26,7 +26,7 @@ const services = [
   {
     icon: <Send className="text-primary-600" size={24} />,
     label: 'Transfert P2P',
-    desc: 'Envoyez de l\'argent à tout utilisateur MOBILE-PAY : débit instantané, crédit en temps réel.',
+    desc: 'Envoyez de l\'argent à tout utilisateur ORZAYAH : débit instantané, crédit en temps réel.',
   },
   {
     icon: <ArrowDownToLine className="text-primary-600" size={24} />,
@@ -142,16 +142,16 @@ const steps = [
 ]
 
 const testimonials = [
-  { name: 'Amara Koné', location: 'Abidjan, Côte d\'Ivoire', initials: 'AK', title: 'Tout en un seul endroit', text: 'J\'utilise MOBILE-PAY pour recharger mon téléphone, envoyer de l\'argent et payer en ligne. Tout est là, simple et rapide.' },
-  { name: 'Jean-Marie Dubois', location: 'Dakar, Sénégal', initials: 'JM', title: 'API très bien documentée', text: 'Nous avons intégré l\'API MOBILE-PAY en 2 jours. Les paiements marchands fonctionnent parfaitement depuis notre plateforme e-commerce.' },
-  { name: 'Nadia Kamara', location: 'Lagos, Nigeria', initials: 'NK', title: 'Carte virtuelle pratique', text: 'Ma carte virtuelle MOBILE-PAY me permet de payer sur Amazon et Alibaba. Plus besoin d\'intermédiaires ni de frais cachés.' },
+  { name: 'Amara Koné', location: 'Abidjan, Côte d\'Ivoire', initials: 'AK', title: 'Tout en un seul endroit', text: 'J\'utilise ORZAYAH pour recharger mon téléphone, envoyer de l\'argent et payer en ligne. Tout est là, simple et rapide.' },
+  { name: 'Jean-Marie Dubois', location: 'Dakar, Sénégal', initials: 'JM', title: 'API très bien documentée', text: 'Nous avons intégré l\'API ORZAYAH en 2 jours. Les paiements marchands fonctionnent parfaitement depuis notre plateforme e-commerce.' },
+  { name: 'Nadia Kamara', location: 'Lagos, Nigeria', initials: 'NK', title: 'Carte virtuelle pratique', text: 'Ma carte virtuelle ORZAYAH me permet de payer sur Amazon et Alibaba. Plus besoin d\'intermédiaires ni de frais cachés.' },
 ]
 
 const faqItems = [
-  { q: 'Comment créer un compte MOBILE-PAY ?', a: 'Téléchargez l\'app Android, entrez votre numéro de téléphone, vérifiez votre identité (KYC) en moins de 5 minutes. Pour un compte Business, contactez notre équipe pour le processus KYB.' },
+  { q: 'Comment créer un compte ORZAYAH ?', a: 'Téléchargez l\'app Android, entrez votre numéro de téléphone, vérifiez votre identité (KYC) en moins de 5 minutes. Pour un compte Business, contactez notre équipe pour le processus KYB.' },
   { q: 'Quels sont les frais de transaction ?', a: 'Transferts locaux : 0,5%. Transferts internationaux : 1,5%. Retraits : 0,25%. Dépôts : gratuits. Airtime et Data : sans frais supplémentaires. Carte virtuelle : frais de création uniques.' },
   { q: 'Quels services sont disponibles pour les marchands ?', a: 'Collecte via QR Code, virement bancaire UEMOA, gestion des salaires, accès à l\'API Business pour intégrer nos paiements à votre plateforme, et un dashboard marchand dédié.' },
-  { q: 'Comment fonctionne la carte virtuelle ?', a: 'Depuis votre app MOBILE-PAY, générez une carte Visa ou Mastercard virtuelle instantanément. Utilisez-la pour payer sur tous les sites e-commerce internationaux.' },
+  { q: 'Comment fonctionne la carte virtuelle ?', a: 'Depuis votre app ORZAYAH, générez une carte Visa ou Mastercard virtuelle instantanément. Utilisez-la pour payer sur tous les sites e-commerce internationaux.' },
 ]
 
 export default function Home() {
@@ -176,7 +176,7 @@ export default function Home() {
                 <span className="text-primary-500">entre tous les opérateurs</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
-                Wave, Orange Money, MTN MoMo, Moov — MOBILE-PAY casse les silos et connecte tous les opérateurs en Afrique francophone dans une seule app : transfert, dépôt, retrait, airtime et paiement QR. Et partout ailleurs dans le monde, profitez de l'airtime, du data, de la carte Visa virtuelle, de PayPal et des cartes cadeaux.
+                Wave, Orange Money, MTN MoMo, Moov — ORZAYAH casse les silos et connecte tous les opérateurs en Afrique francophone dans une seule app : transfert, dépôt, retrait, airtime et paiement QR. Et partout ailleurs dans le monde, profitez de l'airtime, du data, de la carte Visa virtuelle, de PayPal et des cartes cadeaux.
               </p>
 
               {/* Download buttons */}
@@ -237,7 +237,7 @@ export default function Home() {
               <div className="relative rounded-3xl overflow-hidden h-[480px] shadow-2xl ring-1 ring-black/5">
                 <img
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663089638801/FcaTtocAxlZSwjig.png"
-                  alt="Paiement MOBILE-PAY en Côte d'Ivoire"
+                  alt="Paiement ORZAYAH en Côte d'Ivoire"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
@@ -297,7 +297,7 @@ export default function Home() {
               <span>7 services disponibles</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Tout ce que vous pouvez faire avec MOBILE-PAY
+              Tout ce que vous pouvez faire avec ORZAYAH
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Accédez à tous vos services financiers du quotidien depuis une application unique, quel que soit votre opérateur.
@@ -346,7 +346,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-400 mb-8 leading-relaxed max-w-xl">
                 Téléphone ancien, espace de stockage limité ou simplement pas envie d'installer une application&nbsp;?
-                Scannez le QR code et accédez instantanément à vos services MOBILE-PAY essentiels, directement
+                Scannez le QR code et accédez instantanément à vos services ORZAYAH essentiels, directement
                 depuis le navigateur de votre téléphone.
               </p>
 
@@ -368,16 +368,16 @@ export default function Home() {
               </div>
 
               <a
-                href="https://www.mobilepay-ci.com/lite"
+                href="https://www.ORZAYAH-ci.com/lite"
                 className="inline-flex items-center gap-2 text-primary-400 text-sm font-medium hover:text-primary-300 transition-colors"
               >
-                Ou ouvrez directement www.mobilepay-ci.com/lite <ArrowRight size={14} />
+                Ou ouvrez directement www.ORZAYAH-ci.com/lite <ArrowRight size={14} />
               </a>
             </div>
 
             <div className="bg-white rounded-2xl p-5 flex flex-col items-center gap-3 self-center mx-auto lg:mx-0">
               <QRCodeSVG
-                value="https://www.mobilepay-ci.com/lite"
+                value="https://www.ORZAYAH-ci.com/lite"
                 size={148}
                 fgColor="#06140F"
                 level="M"
@@ -546,7 +546,7 @@ export default function Home() {
             <span>Application mobile bientôt disponible</span>
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold mb-6 max-w-2xl mx-auto leading-tight">
-            MOBILE-PAY arrive bientôt
+            ORZAYAH arrive bientôt
           </h2>
           <p className="text-primary-100 text-lg mb-10 max-w-xl mx-auto">
             L'application sera bientôt disponible sur Android et iOS. Gérez toutes vos finances depuis votre smartphone — gratuit et sécurisé.
@@ -593,7 +593,7 @@ export default function Home() {
             <div className="relative h-96 hidden lg:flex items-center justify-center order-2 lg:order-1 rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663089638801/HqqpcIxtaMyQecGY.png"
-                alt="Famille africaine avec MOBILE-PAY"
+                alt="Famille africaine avec ORZAYAH"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -631,7 +631,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Ce que disent nos utilisateurs</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Particuliers et entreprises font confiance à MOBILE-PAY pour leurs finances au quotidien.
+              Particuliers et entreprises font confiance à ORZAYAH pour leurs finances au quotidien.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -666,14 +666,14 @@ export default function Home() {
             <div className="relative h-96 hidden lg:flex items-center justify-center rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663089638801/cWzxQnaTBvsaPLWh.png"
-                alt="Famille africaine heureuse avec MOBILE-PAY"
+                alt="Famille africaine heureuse avec ORZAYAH"
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Conçu pour l'Afrique de l'Ouest</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                MOBILE-PAY est la première super-app financière qui répond aux besoins réels des particuliers et des entreprises de la zone UEMOA — des transferts ruraux aux paiements e-commerce internationaux.
+                ORZAYAH est la première super-app financière qui répond aux besoins réels des particuliers et des entreprises de la zone UEMOA — des transferts ruraux aux paiements e-commerce internationaux.
               </p>
               <div className="space-y-4 mb-8">
                 {[
@@ -712,7 +712,7 @@ export default function Home() {
           <div className="mb-10">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Questions fréquentes</h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Tout ce que vous devez savoir sur MOBILE-PAY et ses services.
+              Tout ce que vous devez savoir sur ORZAYAH et ses services.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -745,11 +745,11 @@ export default function Home() {
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663089638801/wHyADjNmxcqJCRcP.png"
-                  alt="Jeunes Africains avec MOBILE-PAY"
+                  alt="Jeunes Africains avec ORZAYAH"
                   className="w-full h-72 object-cover object-top"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                  <p className="text-white font-semibold text-sm">Des milliers de jeunes font confiance à MOBILE-PAY</p>
+                  <p className="text-white font-semibold text-sm">Des milliers de jeunes font confiance à ORZAYAH</p>
                   <p className="text-white/80 text-xs mt-1">Rejoignez la communauté</p>
                 </div>
               </div>

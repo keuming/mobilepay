@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   BarChart3, TrendingUp, Users, DollarSign, QrCode,
@@ -56,7 +56,7 @@ export default function Dashboard() {
           <div className="w-9 h-9 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0">
             <DollarSign size={20} className="text-white" />
           </div>
-          {sidebarOpen && <span className="font-heading font-bold text-foreground">MOBILE-PAY</span>}
+          {sidebarOpen && <span className="font-heading font-bold text-foreground">ORZAYAH</span>}
         </div>
 
         {/* Nav */}

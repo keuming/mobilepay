@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { ChevronDown, Search } from 'lucide-react'
 import Navigation from '../components/Navigation'
@@ -14,10 +14,10 @@ interface FaqEntry {
 }
 
 const staticFaq: FaqEntry[] = [
-  { id: 1, question: 'Comment puis-je créer un compte MOBILE-PAY ?', answer: 'Créer un compte MOBILE-PAY est simple et rapide. Téléchargez l\'application, entrez votre numéro de téléphone, vérifiez votre identité avec une pièce d\'identité valide, et vous êtes prêt. Le processus prend moins de 5 minutes.', category: 'Compte' },
+  { id: 1, question: 'Comment puis-je créer un compte ORZAYAH ?', answer: 'Créer un compte ORZAYAH est simple et rapide. Téléchargez l\'application, entrez votre numéro de téléphone, vérifiez votre identité avec une pièce d\'identité valide, et vous êtes prêt. Le processus prend moins de 5 minutes.', category: 'Compte' },
   { id: 2, question: 'Quels sont les frais de transaction ?', answer: 'Pour les transferts locaux : 0,5%. Transferts internationaux : 1,5%. Les paiements via QR code sont gratuits pour les marchands. Les retraits sont à 0,25%.', category: 'Tarifs' },
   { id: 3, question: 'Comment puis-je recevoir de l\'argent ?', answer: 'Votre contact peut vous envoyer de l\'argent en entrant votre numéro de téléphone, le montant, et en confirmant. Vous recevrez une notification et l\'argent sera crédité instantanément.', category: 'Paiements' },
-  { id: 4, question: 'Est-ce que MOBILE-PAY est sécurisé ?', answer: 'Oui, la sécurité est notre priorité. Nous utilisons le chiffrement AES-256, l\'authentification biométrique, et la vérification en deux étapes pour protéger votre compte.', category: 'Sécurité' },
+  { id: 4, question: 'Est-ce que ORZAYAH est sécurisé ?', answer: 'Oui, la sécurité est notre priorité. Nous utilisons le chiffrement AES-256, l\'authentification biométrique, et la vérification en deux étapes pour protéger votre compte.', category: 'Sécurité' },
   { id: 5, question: 'Quel est le montant maximum que je peux transférer ?', answer: 'Niveau 1 : 500 000 FCFA/jour. Niveau 2 : 2 000 000 FCFA/jour. Niveau 3 (professionnel) : 5 000 000 FCFA/jour.', category: 'Tarifs' },
   { id: 6, question: 'Comment utiliser le QR code pour payer ?', answer: 'Scannez le code QR du marchand, entrez le montant, et confirmez. Le paiement est instantané. Aucun frais n\'est facturé pour les paiements via QR code.', category: 'Paiements' },
   { id: 7, question: 'Comment acheter du crédit d\'appel ?', answer: 'Depuis votre dashboard, sélectionnez "Vente Crédit", choisissez l\'opérateur et le montant, et confirmez. Le crédit est crédité instantanément sur le numéro cible.', category: 'Services' },
@@ -55,7 +55,7 @@ export default function FAQ() {
             Questions Fréquentes
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Trouvez rapidement les réponses à vos questions sur MOBILE-PAY et nos services.
+            Trouvez rapidement les réponses à vos questions sur ORZAYAH et nos services.
           </p>
           <div className="relative max-w-lg mx-auto">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
@@ -125,7 +125,7 @@ export default function FAQ() {
             <h3 className="text-xl font-bold text-foreground mb-2">Vous n'avez pas trouvé votre réponse ?</h3>
             <p className="text-muted-foreground text-sm mb-6">Notre assistant IA répond à toutes vos questions en temps réel.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="mailto:info@mobilepay-ci.com"
+              <a href="mailto:info@ORZAYAH-ci.com"
                 className="aio-button-outline text-sm px-5 py-2.5">
                 Envoyer un email
               </a>

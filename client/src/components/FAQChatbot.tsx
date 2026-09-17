@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+﻿import { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send, Trash2, Loader2, Bot } from 'lucide-react'
 import api from '../lib/api'
 
@@ -39,7 +39,7 @@ export default function FAQChatbot() {
             setMessages([{
               id: 'welcome',
               role: 'assistant',
-              content: 'Bonjour ! Je suis l\'assistant IA de MOBILE-PAY. Comment puis-je vous aider ? 😊',
+              content: 'Bonjour ! Je suis l\'assistant IA de ORZAYAH. Comment puis-je vous aider ? 😊',
             }])
           }
         })
@@ -47,7 +47,7 @@ export default function FAQChatbot() {
           setMessages([{
             id: 'welcome',
             role: 'assistant',
-            content: 'Bonjour ! Je suis l\'assistant IA de MOBILE-PAY. Comment puis-je vous aider ? 😊',
+            content: 'Bonjour ! Je suis l\'assistant IA de ORZAYAH. Comment puis-je vous aider ? 😊',
           }])
         })
     }
@@ -125,7 +125,7 @@ export default function FAQChatbot() {
               <Bot size={20} />
             </div>
             <div className="flex-1">
-              <p className="font-semibold text-sm">Assistant MOBILE-PAY</p>
+              <p className="font-semibold text-sm">Assistant ORZAYAH</p>
               <p className="text-xs text-white/80">Réponses instantanées 24/7</p>
             </div>
             <button onClick={clearHistory} title="Effacer" className="p-1.5 hover:bg-white/10 rounded-lg transition-colors">

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, LogOut, LayoutDashboard, Shield } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
@@ -24,11 +24,11 @@ export default function Navigation() {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="container">
           <div className="flex items-center justify-between h-16">
-            {/* Logo : marque MobilePay (logo horizontal de l'app mobile) */}
+            {/* Logo : marque ORZAYAH (logo horizontal de l'app mobile) */}
             <Link to="/" className="flex items-center">
               <img
                 src="/logo-horizontal.png"
-                alt="MobilePay"
+                alt="ORZAYAH"
                 className="h-11 w-auto"
               />
             </Link>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 
 /**
  * Écran de chargement plein écran affiché au démarrage de l'app.
@@ -50,7 +50,7 @@ export default function Loader() {
         {/* Logo de marque en pulsation douce */}
         <img
           src="/logo-mark.png"
-          alt="MobilePay"
+          alt="ORZAYAH"
           className="relative w-20 h-20 animate-pulse-soft"
         />
       </div>

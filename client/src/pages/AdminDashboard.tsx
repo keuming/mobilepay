@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+﻿import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import { BarChart3, Users, MessageSquare, Store, FileText, ArrowRight, Shield } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
@@ -40,7 +40,7 @@ export default function AdminDashboard() {
               <Shield size={20} className="text-white" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-foreground">Admin MOBILE-PAY</h1>
+              <h1 className="text-lg font-bold text-foreground">Admin ORZAYAH</h1>
               <p className="text-xs text-muted-foreground">Connecté en tant que {user?.email}</p>
             </div>
           </div>
