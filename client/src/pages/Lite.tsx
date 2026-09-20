@@ -62,6 +62,7 @@ export default function Lite() {
   const [amount, setAmount] = useState('')
   const [momoProvider, setMomoProvider] = useState<MomoProvider | null>(null)
   const [payerPhone, setPayerPhone] = useState('')
+  const [upfrontOtp, setUpfrontOtp] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [nextAction, setNextAction] = useState<NextAction>(null)
@@ -116,7 +117,12 @@ export default function Lite() {
       case 4:
         return !!amount && Number(amount) > 0
       case 5:
-        return momoProvider !== null && !!payerCountry && payerPhone.replace(/\D/g, '').length >= 8
+        return (
+          momoProvider !== null &&
+          !!payerCountry &&
+          payerPhone.replace(/\D/g, '').length >= 8 &&
+          (momoProvider !== 'ORANGE' || upfrontOtp.length >= 4)
+        )
       default:
         return false
     }
@@ -135,6 +141,7 @@ export default function Lite() {
         payerPhone,
         recipientCountry,
         payerCountry,
+        ...(momoProvider === 'ORANGE' && upfrontOtp ? { otpCode: upfrontOtp } : {}),
       })
       setTransactionId(res.data.id)
       if (res.data.nextActionType) {
@@ -398,6 +405,38 @@ export default function Lite() {
                   className="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3.5 focus:border-primary-400 outline-none"
                 />
 
+                {/* § Orange exige son code AVANT le paiement (voir
+                    commentaire backend) — sans ça, le délai de 10 minutes
+                    d'Orange s'épuise et le paiement expire systématiquement.
+                    Les autres opérateurs authentifient directement sur le
+                    téléphone, aucune saisie supplémentaire n'est nécessaire. */}
+                {momoProvider === 'ORANGE' && (
+                  <div className="mt-4">
+                    <div className="rounded-xl bg-primary-400/10 border border-primary-400/30 p-4 mb-3">
+                      <p className="text-sm font-semibold mb-1">1️⃣ Génère ton code Orange Money</p>
+                      <p className="text-white/60 text-xs mb-2">
+                        Depuis ton téléphone Orange, compose :
+                      </p>
+                      <p className="text-2xl font-bold text-primary-400 text-center tracking-wider mb-2">
+                        #144*82#
+                      </p>
+                      <p className="text-white/60 text-xs">
+                        puis choisis l'option pour obtenir ton code de paiement.
+                      </p>
+                    </div>
+                    <label className="text-xs text-white/50 mb-1.5 block">
+                      2️⃣ Code de paiement Orange Money
+                    </label>
+                    <input
+                      value={upfrontOtp}
+                      onChange={(e) => setUpfrontOtp(e.target.value.replace(/\D/g, ''))}
+                      placeholder="••••••"
+                      inputMode="numeric"
+                      className="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3.5 text-center text-xl tracking-widest focus:border-primary-400 outline-none"
+                    />
+                  </div>
+                )}
+
                 <div className="mt-5 rounded-xl bg-white/[0.02] border border-white/10 p-4 text-sm space-y-2">
                   <Row k="Numéro crédité" v={phone} />
                   <Row k="Montant" v={`${Number(amount).toLocaleString('fr-FR')} FCFA`} />
@@ -467,8 +506,13 @@ function PendingScreen({ nextAction, amount }: { nextAction: NextAction; amount:
   return (
     <div className="min-h-screen bg-[#0B0F1A] text-white flex flex-col items-center justify-center px-6 text-center">
       <Loader2 className="animate-spin text-primary-400 mb-5" size={40} />
+      {/* § Depuis que le code Orange est demandé EN AMONT (étape précédente),
+          HUB2 ne renvoie plus jamais nextActionType "otp" ici — le paiement
+          part déjà authentifié. Seuls deux cas restent possibles : Wave
+          (lien à ouvrir) et MTN/Moov/Orange (validation déjà lancée côté
+          opérateur, on attend juste la confirmation). */}
       <h1 className="text-xl font-bold mb-2">
-        {nextAction.type === 'redirection' ? 'Ouvre le lien de paiement' : 'Valide sur ton téléphone'}
+        {nextAction.type === 'redirection' ? 'Ouvre le lien de paiement' : 'Confirmation en cours'}
       </h1>
       <p className="text-white/60 max-w-xs mb-6">
         {nextAction.message ??
