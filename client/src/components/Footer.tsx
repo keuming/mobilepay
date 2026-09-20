@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             {/* Marque : pastille (logo-mark) + nom en blanc (fond sombre) */}
-            <div class="flex items-center gap-2.5 mb-4"><img src="/logo-horizontal.png" alt="ORZAYAH" class="h-9 w-auto" /></div>
+            <div className="flex items-center gap-2.5 mb-4"><img src="/logo-horizontal.png" alt="ORZAYAH" className="h-9 w-auto" /></div>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed max-w-xs">
               Votre Powering African Commerce pour une gestion financière simplifiée en Afrique de l'Ouest.
             </p>

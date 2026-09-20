@@ -56,10 +56,10 @@ export default function Merchants() {
               <Store size={14} /> Solution marchands
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Développez votre commerce avec <span className="text-primary-500"><img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /></span>
+              Développez votre commerce avec <span className="text-primary-500">ORZAYAH</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Rejoignez des milliers de marchands qui utilisent <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> pour accepter les paiements mobiles, gérer leurs ventes et développer leur activité en Afrique de l'Ouest.
+              Rejoignez des milliers de marchands qui utilisent ORZAYAH pour accepter les paiements mobiles, gérer leurs ventes et développer leur activité en Afrique de l'Ouest.
             </p>
             <div className="flex gap-4">
               <a href="#join" className="aio-button-primary">
@@ -74,7 +74,7 @@ export default function Merchants() {
       <section className="section-py bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Pourquoi choisir <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> ?</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Pourquoi choisir ORZAYAH ?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Une solution complète pensée pour les marchands africains.
             </p>
@@ -119,7 +119,7 @@ export default function Merchants() {
       <section id="join" className="section-py bg-white">
         <div className="container max-w-2xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Rejoindre <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /></h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Rejoindre ORZAYAH</h2>
             <p className="text-muted-foreground">
               Remplissez le formulaire et notre équipe vous contactera sous 24h.
             </p>

@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './contexts/AuthContext'
 import Home from './pages/Home'
+import Lite from './pages/Lite'
 import Dashboard from './pages/Dashboard'
 import Merchants from './pages/Merchants'
 import { International, About, Pricing, Blog, NotFound } from './pages/pages'
@@ -67,6 +68,7 @@ export default function App() {
           </ProtectedRoute>
         } />
 
+        <Route path="/lite" element={<Lite />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AuthProvider>

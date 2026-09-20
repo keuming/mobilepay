@@ -176,7 +176,7 @@ export default function Home() {
                 <span className="text-primary-500">entre tous les opérateurs</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
-                Wave, Orange Money, MTN MoMo, Moov — <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle mr-1" /> casse les silos et connecte tous les opérateurs en Afrique francophone dans une seule app : transfert, dépôt, retrait, airtime et paiement QR. Et partout ailleurs dans le monde, profitez de l'airtime, du data, de la carte Visa virtuelle, de PayPal et des cartes cadeaux.
+                Wave, Orange Money, MTN MoMo, Moov — ORZAYAH casse les silos et connecte tous les opérateurs en Afrique francophone dans une seule app : transfert, dépôt, retrait, airtime et paiement QR. Et partout ailleurs dans le monde, profitez de l'airtime, du data, de la carte Visa virtuelle, de PayPal et des cartes cadeaux.
               </p>
 
               {/* Download buttons */}
@@ -297,7 +297,7 @@ export default function Home() {
               <span>7 services disponibles</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Tout ce que vous pouvez faire avec <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-8 w-auto align-middle ml-1" />
+              Tout ce que vous pouvez faire avec ORZAYAH
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Accédez à tous vos services financiers du quotidien depuis une application unique, quel que soit votre opérateur.
@@ -346,7 +346,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-400 mb-8 leading-relaxed max-w-xl">
                 Téléphone ancien, espace de stockage limité ou simplement pas envie d'installer une application&nbsp;?
-                Scannez le QR code et accédez instantanément à vos services <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> essentiels, directement
+                Scannez le QR code et accédez instantanément à vos services ORZAYAH essentiels, directement
                 depuis le navigateur de votre téléphone.
               </p>
 
@@ -546,7 +546,7 @@ export default function Home() {
             <span>Application mobile bientôt disponible</span>
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold mb-6 max-w-2xl mx-auto leading-tight">
-            <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-7 w-auto align-middle" /> arrive bientôt
+            ORZAYAH arrive bientôt
           </h2>
           <p className="text-primary-100 text-lg mb-10 max-w-xl mx-auto">
             L'application sera bientôt disponible sur Android et iOS. Gérez toutes vos finances depuis votre smartphone — gratuit et sécurisé.
@@ -631,7 +631,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Ce que disent nos utilisateurs</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Particuliers et entreprises font confiance à <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> pour leurs finances au quotidien.
+              Particuliers et entreprises font confiance à ORZAYAH pour leurs finances au quotidien.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -673,7 +673,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Conçu pour l'Afrique de l'Ouest</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-6 w-auto align-middle mr-1" /> est la première super-app financière qui répond aux besoins réels des particuliers et des entreprises de la zone UEMOA — des transferts ruraux aux paiements e-commerce internationaux.
+                ORZAYAH est la première super-app financière qui répond aux besoins réels des particuliers et des entreprises de la zone UEMOA — des transferts ruraux aux paiements e-commerce internationaux.
               </p>
               <div className="space-y-4 mb-8">
                 {[
@@ -712,7 +712,7 @@ export default function Home() {
           <div className="mb-10">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Questions fréquentes</h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Tout ce que vous devez savoir sur <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /> et ses services.
+              Tout ce que vous devez savoir sur ORZAYAH et ses services.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -749,7 +749,7 @@ export default function Home() {
                   className="w-full h-72 object-cover object-top"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                  <p className="text-white font-semibold text-sm">Des milliers de jeunes font confiance à <img src="/brand/orzayah-logo.png" alt="ORZAYAH" className="inline-block h-5 w-auto align-middle" /></p>
+                  <p className="text-white font-semibold text-sm">Des milliers de jeunes font confiance à ORZAYAH</p>
                   <p className="text-white/80 text-xs mt-1">Rejoignez la communauté</p>
                 </div>
               </div>
