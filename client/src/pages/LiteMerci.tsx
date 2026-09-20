@@ -2,17 +2,6 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { CheckCircle2, XCircle, Smartphone, Sparkles } from 'lucide-react'
 
-/**
- * § Page de retour après un paiement Wave/HUB2 sur le parcours QR Lite.
- *
- * Le client QUITTE orzayah.com pour payer dans son app Wave, puis HUB2 le
- * ramène ici (onSuccessRedirectionUrl / onFailedRedirectionUrl, configurées
- * côté backend — voir purchaseAirtimeLite). Avant ce correctif, ces URL
- * étaient codées en dur sur le dashboard marchand : un client sans compte
- * ORZAYAH se retrouvait face à un écran de connexion sans rapport avec son
- * achat. Cette page corrige ça ET transforme ce retour en opportunité :
- * plutôt qu'un simple accusé, elle donne envie d'installer l'app.
- */
 export default function LiteMerci() {
   const [params] = useSearchParams()
   const statut = params.get('statut')
@@ -22,8 +11,6 @@ export default function LiteMerci() {
 
   useEffect(() => {
     if (!transactionId) return
-    // Re-confirme auprès du serveur plutôt que de faire confiance au seul
-    // paramètre d'URL — un lien de retour peut être rejoué ou modifié.
     fetch(`https://mobilepay-v2-api.onrender.com/api/airtime-lite/${transactionId}/status`)
       .then((r) => r.json())
       .then((tx) => setConfirmed(tx.status === 'SUCCESS' ? 'SUCCESS' : tx.status === 'FAILED' ? 'FAILED' : 'PENDING'))
@@ -51,9 +38,6 @@ export default function LiteMerci() {
           : "Vérifie ton solde Mobile Money et réessaie depuis le lien reçu par SMS."}
       </p>
 
-      {/* § L'incitation à l'app : le moment le plus opportun pour convertir
-          un client occasionnel du QR Lite en utilisateur régulier — il vient
-          de vivre l'expérience de paiement et sait déjà qu'ORZAYAH marche. */}
       <div className="w-full max-w-sm rounded-2xl bg-gradient-to-br from-primary-400/15 to-primary-400/5 border border-primary-400/30 p-6">
         <div className="flex items-center justify-center gap-2 mb-3">
           <Sparkles className="text-primary-400" size={18} />
@@ -66,7 +50,7 @@ export default function LiteMerci() {
           l'application et gère tout depuis un seul endroit, sans jamais ressaisir
           tes informations.
         </p>
-        <a
+        
           href="/"
           className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary-400 text-black font-bold py-3.5"
         >

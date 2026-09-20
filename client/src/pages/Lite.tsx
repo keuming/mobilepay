@@ -20,6 +20,13 @@ interface Operator {
   operatorId: string
   name: string
   logoUrls?: string[]
+  denominationType: 'FIXED' | 'RANGE'
+  fixedAmounts?: number[]
+  localFixedAmounts?: number[]
+  minAmount: number | null
+  maxAmount: number | null
+  localMinAmount: number | null
+  localMaxAmount: number | null
 }
 
 type Category = 'AIRTIME' | 'DATA'
@@ -114,8 +121,16 @@ export default function Lite() {
         return operator !== null
       case 3:
         return phone.replace(/\D/g, '').length >= 8
-      case 4:
-        return !!amount && Number(amount) > 0
+      case 4: {
+        if (!amount || Number(amount) <= 0 || !operator) return false
+        const v = Number(amount)
+        if (operator.denominationType === 'FIXED') {
+          return operator.localFixedAmounts?.includes(v) ?? false
+        }
+        if (operator.localMinAmount && v < operator.localMinAmount) return false
+        if (operator.localMaxAmount && v > operator.localMaxAmount) return false
+        return true
+      }
       case 5:
         return (
           momoProvider !== null &&
@@ -331,17 +346,61 @@ export default function Lite() {
               </div>
             )}
 
-            {step === 4 && (
+            {step === 4 && operator && (
               <div>
-                <h1 className="text-xl font-bold mb-5">Quel montant ?</h1>
-                <input
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value.replace(/\D/g, ''))}
-                  placeholder="0"
-                  inputMode="numeric"
-                  className="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3.5 text-2xl font-bold focus:border-primary-400 outline-none"
-                />
-                <span className="text-white/40 text-sm mt-2 block">FCFA</span>
+                <h1 className="text-xl font-bold mb-1">Quel montant ?</h1>
+                {operator.denominationType === 'FIXED' && operator.localFixedAmounts?.length ? (
+                  <>
+                    <p className="text-white/50 text-sm mb-5">
+                      {operator.name} ne propose que ces montants precis.
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {operator.localFixedAmounts.map((v) => (
+                        <button
+                          key={v}
+                          onClick={() => setAmount(String(v))}
+                          className={`rounded-xl border px-4 py-3.5 text-base font-bold transition-colors ${
+                            Number(amount) === v
+                              ? 'border-primary-400 bg-primary-400/10'
+                              : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                          }`}
+                        >
+                          {v.toLocaleString('fr-FR')} FCFA
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-white/50 text-sm mb-5">
+                      {operator.localMinAmount && operator.localMaxAmount
+                        ? `Entre ${operator.localMinAmount.toLocaleString('fr-FR')} et ${operator.localMaxAmount.toLocaleString('fr-FR')} FCFA chez ${operator.name}.`
+                        : `Montant a recharger chez ${operator.name}.`}
+                    </p>
+                    <input
+                      value={amount}
+                      onChange={(e) => setAmount(e.target.value.replace(/\D/g, ''))}
+                      placeholder="0"
+                      inputMode="numeric"
+                      className="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3.5 text-2xl font-bold focus:border-primary-400 outline-none"
+                    />
+                    <span className="text-white/40 text-sm mt-2 block">FCFA</span>
+                    {operator.localMinAmount &&
+                      amount !== '' &&
+                      Number(amount) < operator.localMinAmount && (
+                        <p className="text-red-400 text-xs mt-2">
+                          Minimum {operator.localMinAmount.toLocaleString('fr-FR')} FCFA chez cet operateur.
+                        </p>
+                      )}
+                    {operator.localMaxAmount &&
+                      amount !== '' &&
+                      Number(amount) > operator.localMaxAmount && (
+                        <p className="text-red-400 text-xs mt-2">
+                          Maximum {operator.localMaxAmount.toLocaleString('fr-FR')} FCFA chez cet operateur.
+                        </p>
+                      )}
+                  </>
+                )}
               </div>
             )}
 
