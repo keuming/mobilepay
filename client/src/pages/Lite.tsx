@@ -30,11 +30,11 @@ const CATEGORIES: { id: Category; label: string; icon: typeof Smartphone; hint: 
   { id: 'DATA', label: 'Forfait internet', icon: Wifi, hint: 'Pass data' },
 ]
 
-const MOMO_PROVIDERS: { id: MomoProvider; label: string }[] = [
-  { id: 'ORANGE', label: 'Orange Money' },
-  { id: 'MTN', label: 'MTN MoMo' },
-  { id: 'MOOV', label: 'Moov Money' },
-  { id: 'WAVE', label: 'Wave' },
+const MOMO_PROVIDERS: { id: MomoProvider; label: string; logo: string }[] = [
+  { id: 'ORANGE', label: 'Orange Money', logo: '/logos/orange-money.png' },
+  { id: 'MTN', label: 'MTN MoMo', logo: '/logos/mtn-money.png' },
+  { id: 'MOOV', label: 'Moov Money', logo: '/logos/moov-money.png' },
+  { id: 'WAVE', label: 'Wave', logo: '/logos/wave.png' },
 ]
 
 const STEPS = ['Pays', 'Catégorie', 'Opérateur', 'Numéro', 'Montant', 'Paiement'] as const
@@ -382,21 +382,37 @@ export default function Lite() {
                   ))}
                 </select>
 
-                <div className="grid grid-cols-2 gap-2 mb-5">
+                <div className="grid grid-cols-2 gap-2 mb-3">
                   {MOMO_PROVIDERS.map((p) => (
                     <button
                       key={p.id}
                       onClick={() => setMomoProvider(p.id)}
-                      className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-colors ${
+                      className={`rounded-xl border px-3 py-3 flex items-center gap-2.5 transition-colors ${
                         momoProvider === p.id
                           ? 'border-primary-400 bg-primary-400/10'
                           : 'border-white/10 bg-white/[0.02] hover:border-white/20'
                       }`}
                     >
-                      {p.label}
+                      <img src={p.logo} alt="" className="h-7 w-7 rounded-md bg-white object-contain flex-shrink-0" />
+                      <span className="text-sm font-semibold">{p.label}</span>
                     </button>
                   ))}
                 </div>
+
+                {/* § Carte bancaire annoncée mais NON activable : HUB2 ne
+                    documente pas la structure de requête carte, et le canal
+                    n'est pas confirmé actif sur ce compte marchand (même
+                    décision déjà prise sur pay.mobilepay-ci.com). Proposer
+                    un bouton qui échouerait serait pire que d'annoncer
+                    l'échéance. */}
+                <div className="rounded-xl border border-white/10 bg-white/[0.02] px-3 py-3 flex items-center gap-2.5 opacity-50 mb-5">
+                  <div className="h-7 w-7 rounded-md bg-white/10 flex items-center justify-center flex-shrink-0 text-xs">
+                    💳
+                  </div>
+                  <span className="text-sm font-semibold flex-1">Carte bancaire</span>
+                  <span className="text-[10px] font-bold text-white/50 tracking-wider">BIENTÔT</span>
+                </div>
+
                 <input
                   value={payerPhone}
                   onChange={(e) => setPayerPhone(e.target.value.replace(/\D/g, ''))}
@@ -440,6 +456,13 @@ export default function Lite() {
                 <div className="mt-5 rounded-xl bg-white/[0.02] border border-white/10 p-4 text-sm space-y-2">
                   <Row k="Numéro crédité" v={phone} />
                   <Row k="Montant" v={`${Number(amount).toLocaleString('fr-FR')} FCFA`} />
+                  <Row k="Frais de service" v="100 FCFA" />
+                  <div className="pt-2 mt-2 border-t border-white/10">
+                    <Row
+                      k="Total à payer"
+                      v={`${(Number(amount) + 100).toLocaleString('fr-FR')} FCFA`}
+                    />
+                  </div>
                 </div>
               </div>
             )}
