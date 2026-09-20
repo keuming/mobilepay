@@ -85,7 +85,7 @@ export default function Lite() {
     if (!transactionId || finalStatus) return
     const interval = setInterval(async () => {
       try {
-        const res = await liteApi.get(`/transactions/${transactionId}`)
+        const res = await liteApi.get(`/airtime-lite/${transactionId}/status`)
         const tx = res.data
         if (tx.status === 'SUCCESS') {
           setFinalStatus('SUCCESS')
@@ -185,7 +185,7 @@ export default function Lite() {
   }
 
   // --- Écran d'action requise (attente du paiement) ---
-  if (transactionId && nextAction) {
+  if (transactionId && !finalStatus) {
     return <PendingScreen nextAction={nextAction} amount={amount} />
   }
 
@@ -502,23 +502,28 @@ function ResultScreen({
 }
 
 function PendingScreen({ nextAction, amount }: { nextAction: NextAction; amount: string }) {
-  if (!nextAction) return null
+  // § Bug corrigé : cet écran retournait `null` tant que `nextAction`
+  // n'était pas encore connu — or cette information arrive parfois APRÈS
+  // la réponse initiale (webhook HUB2), avec un court délai. Résultat
+  // observé en production : un paiement Wave réussi laissait l'utilisateur
+  // face au formulaire vide, sans aucun signe que quelque chose se passait.
+  // On affiche donc toujours un état — neutre en l'absence d'action
+  // connue, précis dès qu'elle arrive.
   return (
     <div className="min-h-screen bg-[#0B0F1A] text-white flex flex-col items-center justify-center px-6 text-center">
       <Loader2 className="animate-spin text-primary-400 mb-5" size={40} />
-      {/* § Depuis que le code Orange est demandé EN AMONT (étape précédente),
-          HUB2 ne renvoie plus jamais nextActionType "otp" ici — le paiement
-          part déjà authentifié. Seuls deux cas restent possibles : Wave
-          (lien à ouvrir) et MTN/Moov/Orange (validation déjà lancée côté
-          opérateur, on attend juste la confirmation). */}
       <h1 className="text-xl font-bold mb-2">
-        {nextAction.type === 'redirection' ? 'Ouvre le lien de paiement' : 'Confirmation en cours'}
+        {!nextAction
+          ? 'Connexion à ton opérateur…'
+          : nextAction.type === 'redirection'
+            ? 'Ouvre le lien de paiement'
+            : 'Confirmation en cours'}
       </h1>
       <p className="text-white/60 max-w-xs mb-6">
-        {nextAction.message ??
-          `Confirme le paiement de ${Number(amount).toLocaleString('fr-FR')} FCFA sur ton téléphone.`}
+        {nextAction?.message ??
+          `Confirme le paiement de ${Number(amount).toLocaleString('fr-FR')} FCFA sur ton téléphone. Cette page se met à jour automatiquement.`}
       </p>
-      {nextAction.type === 'redirection' && nextAction.url && (
+      {nextAction?.type === 'redirection' && nextAction.url && (
         <a
           href={nextAction.url}
           className="rounded-xl bg-primary-400 text-black font-bold px-8 py-3 inline-block"
