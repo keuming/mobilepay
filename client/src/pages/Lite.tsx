@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, CheckCircle2, Loader2, Smartphone, Wifi } from 'lucide-react'
 import liteApi from '../lib/liteApi'
@@ -67,6 +67,7 @@ export default function Lite() {
   const [error, setError] = useState<string | null>(null)
   const [nextAction, setNextAction] = useState<NextAction>(null)
   const [transactionId, setTransactionId] = useState<string | null>(null)
+  const idempotencyKeyRef = useRef(String(Date.now()) + '-' + Math.random().toString(36).slice(2))
   const [finalStatus, setFinalStatus] = useState<'SUCCESS' | 'FAILED' | null>(null)
 
   useEffect(() => {
@@ -142,7 +143,7 @@ export default function Lite() {
         recipientCountry,
         payerCountry,
         ...(momoProvider === 'ORANGE' && upfrontOtp ? { otpCode: upfrontOtp } : {}),
-      })
+      }, { headers: { 'Idempotency-Key': idempotencyKeyRef.current } })
       setTransactionId(res.data.id)
       if (res.data.nextActionType) {
         setNextAction({
