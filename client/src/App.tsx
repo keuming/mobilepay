@@ -12,6 +12,7 @@ import AdminFAQ from './pages/AdminFAQ'
 import AdminMerchants from './pages/AdminMerchants'
 import ProtectedRoute from './components/ProtectedRoute'
 import Loader from './components/Loader'
+import LiteMerci from './pages/LiteMerci'
 
 export default function App() {
   return (
@@ -69,6 +70,7 @@ export default function App() {
         } />
 
         <Route path="/lite" element={<Lite />} />
+        <Route path="/lite/merci" element={<LiteMerci />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AuthProvider>

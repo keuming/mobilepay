@@ -51,6 +51,7 @@ export default function LiteMerci() {
           tes informations.
         </p>
         
+        <a
           href="/"
           className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary-400 text-black font-bold py-3.5"
         >
