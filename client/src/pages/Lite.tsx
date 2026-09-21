@@ -152,7 +152,7 @@ export default function Lite() {
         })
       }
     } catch (err: any) {
-      setError(err?.response?.data?.message ?? "Le paiement n'a pas pu démarrer.")
+      setError(err?.response?.data?.error?.message ?? err?.response?.data?.message ?? "Le paiement n'a pas pu demarrer.")
     } finally {
       setSubmitting(false)
     }
